@@ -1,6 +1,7 @@
 # bd_logistic_kpi: Caso BD transaccional
 
 🧾 Caso Propuesto: Control de Inventarios con Consumo por Obras – LOGISIMPLE PROYECTOS S.R.L.
+
 🏗️ Contexto del Caso
 
 LOGISTIC PROYECTOS S.R.L. brinda soporte logístico a empresas constructoras, centralizando el almacenamiento de materiales e insumos que luego son distribuidos y consumidos en diversas obras. Actualmente, los registros se llevan de forma manual, dificultando la trazabilidad del inventario, el control del stock y el análisis de consumos por proyecto.
