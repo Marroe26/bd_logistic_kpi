@@ -132,14 +132,23 @@ Tabla Alerta
 
 📈 Indicadores a implementar en el dashboard
 Indicador	Descripción
+
 Stock actual vs. stock mínimo	Resalta productos con riesgo de quiebre
+
 Total consumido por proyecto	Muestra cuánto se ha consumido por cada obra
+
 Top 10 productos más utilizados	Lista de los productos con mayor salida
+
 Días de cobertura por producto	Cuántos días durará el stock al ritmo de consumo actual
+
 Rotación de inventario mensual	Frecuencia con que un producto entra y sale del almacén
+
 Tasa de quiebres de stock	Proporción de productos que han llegado a cero en determinado periodo
+
 Costo total del inventario	(Si hay precios): stock actual × precio unitario
+
 Historial de alertas por proyecto	Ver qué obras han tenido más alertas de stock bajo o quiebre
+
 
 📊 Dashboards sugeridos
 1. Panel de inventario general
