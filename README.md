@@ -96,7 +96,7 @@ ________________________________________________________________________________
 
 📊 Caso de Inteligencia de Negocios:
 
-“Análisis logístico y de consumo en obras – LOGISIMPLE PROYECTOS S.R.L.”
+“Análisis logístico y de consumo en obras – LOGISTIC PROYECTOS S.R.L.”
 🏗️ Contexto general
 LOGISTIC PROYECTOS S.R.L. ha implementado recientemente una base de datos que registra productos, movimientos de inventario (entradas/salidas), consumos por proyecto, niveles de stock y alertas por quiebre.
 
