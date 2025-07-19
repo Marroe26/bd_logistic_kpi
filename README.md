@@ -1,6 +1,6 @@
 # bd_logistic_kpi: Caso BD transaccional
 
-🧾 Caso Propuesto: Control de Inventarios con Consumo por Obras – LOGISIMPLE PROYECTOS S.R.L.
+🧾 Caso Propuesto: Control de Inventarios con Consumo por Obras – LOGISTIC PROYECTOS S.R.L.
 
 🏗️ Contexto del Caso
 
