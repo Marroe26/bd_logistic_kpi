@@ -13,5 +13,14 @@ descripcion VARCHAR (MAX) NULL
 );
 
 
+   -- Unidad de medida
+CREATE TABLE unidad_medida (
+id INT IDENTITY (1,1) PRIMARY KEY,
+nombre VARCHAR (255) NOT NULL,
+abreviatura VARCHAR (5) NULL
+);
+
+
 -- Para verificar los detalles de las tablas
 EXEC sp_help tipo_movimiento
+EXEC sp_help unidad_medida
