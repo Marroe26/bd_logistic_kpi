@@ -1,5 +1,5 @@
 #Diagrama Entidad/Relacion
-![modelo_conceptual_LogisticaKpi_actualizado](https://github.com/user-attachments/assets/b46b49b2-4e1e-4857-8764-a35ac70c3b46)
+![modelo_conceptual_LogisticaKpi_actualizado2](https://github.com/user-attachments/assets/6bd71dce-dad6-48b3-a7af-e21a50b71ec3)
 
 
 
