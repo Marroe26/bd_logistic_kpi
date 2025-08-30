@@ -4,5 +4,9 @@
 
 
 #Diseño Logico
-![diseño_logico_LogisticaKpi](https://github.com/user-attachments/assets/d944f2e1-21bb-4de8-ab0c-2443f2613006)
+![diseño_logico_LogisticaKpi_act](https://github.com/user-attachments/assets/8d8bcfd6-3cc6-41aa-b5de-5ed77a178bb8)
 
+
+
+#Diseño físico
+![diseño fisico_logistic_kpi](https://github.com/user-attachments/assets/c7c4c586-6772-413d-8893-0fd4c6075f05)
