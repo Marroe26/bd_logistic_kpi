@@ -38,7 +38,7 @@ fecha_inicio DATE,
 estado_proyecto VARCHAR (255) NOT NULL
 );
 
- -- 5. Productos
+  -- 5. Productos
 CREATE TABLE productos (
 id INT IDENTITY (1,1) PRIMARY KEY,
 unidad_medida_id INT FOREIGN KEY REFERENCES unidad_medida (id),
@@ -47,7 +47,7 @@ stock_minimo INT NOT NULL,
 tipo VARCHAR (50) NOT NULL
 );
 
- -- 6. Alertas
+  -- 6. Alertas
 CREATE TABLE alerta (
 id INT IDENTITY (1,1) PRIMARY KEY,
 productos_id INT FOREIGN KEY REFERENCES productos (id),
@@ -57,7 +57,7 @@ mensaje VARCHAR (50) NULL,
 estado_alerta VARCHAR (50) NOT NULL --(Pendiente/ Atendida)
 );
 
- -- 7. Movimientos
+  -- 7. Movimientos
 CREATE TABLE movimiento (
 id INT IDENTITY (1,1) PRIMARY KEY,
 productos_id INT FOREIGN KEY REFERENCES productos (id),
@@ -69,12 +69,53 @@ cantidad INT,
 fecha_movimiento DATE,
 );
 
+  -- 8. Tipos de alerta
+CREATE TABLE tipo_alerta (
+id INT IDENTITY (1,1) PRIMARY KEY,
+nombre VARCHAR (20) UNIQUE NOT NULL,
+descripcion VARCHAR (MAX) NULL
+);
+
+  -- 9. Estado de alerta
+CREATE TABLE estado_alerta (
+id INT IDENTITY (1,1) PRIMARY KEY,
+nombre VARCHAR (20) UNIQUE NOT NULL,
+descripcion VARCHAR (MAX) NULL
+);
+
 -- Modificaciones después de feedback ChatGPT
  ALTER TABLE movimiento
  DROP COLUMN tipo_movimiento;
 
  ALTER TABLE productos
  ADD stock_actual INT NOT NULL;
+
+ ALTER TABLE alerta
+ DROP COLUMN tipo_alerta;
+
+ ALTER TABLE alerta
+ DROP COLUMN estado_alerta;
+
+ ALTER TABLE alerta ADD tipo_alerta_id INT NULL;
+ ALTER TABLE alerta ADD estado_alerta_id INT NULL;
+
+ ALTER TABLE alerta
+ ADD CONSTRAINT FK_alerta_tipo 
+ FOREIGN KEY (tipo_alerta_id) 
+ REFERENCES tipo_alerta(id);
+
+ ALTER TABLE alerta
+ ADD CONSTRAINT FK_alerta_estado 
+ FOREIGN KEY (estado_alerta_id) 
+ REFERENCES estado_alerta(id);
+
+ --ALTER TABLE alerta ALTER COLUMN tipo_alerta_id INT NOT NULL;
+--ALTER TABLE alerta ALTER COLUMN estado_alerta_id INT NOT NULL;
+
+ --ALTER TABLE nombre_tabla_hija
+ --ADD CONSTRAINT fk_nombre_restriccion
+ --FOREIGN KEY (nombre_columna_hija)
+ --REFERENCES nombre_tabla_padre (nombre_columna_padre);
 
 
 -- Para verificar los detalles de las tablas
@@ -84,3 +125,6 @@ EXEC sp_help empresa
 EXEC sp_help proyectos
 EXEC sp_help productos
 EXEC sp_help movimiento
+EXEC sp_help alerta
+EXEC sp_help tipo_alerta
+EXEC sp_help estado_alerta
