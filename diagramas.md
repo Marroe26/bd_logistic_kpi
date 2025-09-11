@@ -1,10 +1,11 @@
 #Diagrama Entidad/Relacion
-![modelo_conceptual_LogisticaKpi_actualizado2](https://github.com/user-attachments/assets/6bd71dce-dad6-48b3-a7af-e21a50b71ec3)
+![modelo_conceptual_LogisticaKpi_actualizado3](https://github.com/user-attachments/assets/c4bd5aaa-80fa-4474-977b-1ddbb7ea3444)
 
 
 
 #Diseño Logico
-![diseño_logico_LogisticaKpi_act](https://github.com/user-attachments/assets/8d8bcfd6-3cc6-41aa-b5de-5ed77a178bb8)
+![diseño_logico_LogisticaKpi_act2](https://github.com/user-attachments/assets/970f7b47-a971-407c-a2d4-a816a8882935)
+
 
 
 
