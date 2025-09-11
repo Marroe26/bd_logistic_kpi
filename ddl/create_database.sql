@@ -69,6 +69,12 @@ cantidad INT,
 fecha_movimiento DATE,
 );
 
+-- Modificaciones después de feedback ChatGPT
+ ALTER TABLE movimiento
+ DROP COLUMN tipo_movimiento;
+
+ ALTER TABLE productos
+ ADD stock_actual INT NOT NULL;
 
 
 -- Para verificar los detalles de las tablas
@@ -77,3 +83,4 @@ EXEC sp_help unidad_medida
 EXEC sp_help empresa
 EXEC sp_help proyectos
 EXEC sp_help productos
+EXEC sp_help movimiento
