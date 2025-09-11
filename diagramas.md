@@ -10,4 +10,5 @@
 
 
 #Diseño físico
-![diseño fisico_logistic_kpi](https://github.com/user-attachments/assets/c7c4c586-6772-413d-8893-0fd4c6075f05)
+<img width="1342" height="862" alt="image" src="https://github.com/user-attachments/assets/ceb09ae9-e3e0-40d5-b248-326fe2a6e07e" />
+
