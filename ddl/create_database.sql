@@ -19,7 +19,7 @@ nombre VARCHAR (20) UNIQUE NOT NULL,
 abreviatura VARCHAR (5) UNIQUE NOT NULL
 );
 
-   -- 3. Empleados
+   -- 3. Empleado
 CREATE TABLE empleado (
 id INT IDENTITY (1,1) PRIMARY KEY,
 nombres VARCHAR (100) NOT NULL,
@@ -47,7 +47,7 @@ stock_minimo INT NOT NULL,
 tipo VARCHAR (50) NOT NULL
 );
 
-  -- 6. Alertas
+  -- 6. Alerta
 CREATE TABLE alerta (
 id INT IDENTITY (1,1) PRIMARY KEY,
 productos_id INT FOREIGN KEY REFERENCES productos (id),
@@ -57,7 +57,7 @@ mensaje VARCHAR (50) NULL,
 estado_alerta VARCHAR (50) NOT NULL --(Pendiente/ Atendida)
 );
 
-  -- 7. Movimientos
+  -- 7. Movimiento
 CREATE TABLE movimiento (
 id INT IDENTITY (1,1) PRIMARY KEY,
 productos_id INT FOREIGN KEY REFERENCES productos (id),
@@ -84,6 +84,10 @@ descripcion VARCHAR (MAX) NULL
 );
 
 -- Modificaciones después de feedback ChatGPT
+
+USE bd_logistic_kpi;
+GO
+
  ALTER TABLE movimiento
  DROP COLUMN tipo_movimiento;
 
@@ -108,6 +112,11 @@ descripcion VARCHAR (MAX) NULL
  ADD CONSTRAINT FK_alerta_estado 
  FOREIGN KEY (estado_alerta_id) 
  REFERENCES estado_alerta(id);
+
+ ALTER TABLE alerta
+ ALTER COLUMN mensaje VARCHAR(255);
+
+
 
  --ALTER TABLE alerta ALTER COLUMN tipo_alerta_id INT NOT NULL;
 --ALTER TABLE alerta ALTER COLUMN estado_alerta_id INT NOT NULL;
