@@ -8,7 +8,10 @@
 
 
 
-
 #Diseño físico
 <img width="1342" height="862" alt="image" src="https://github.com/user-attachments/assets/ceb09ae9-e3e0-40d5-b248-326fe2a6e07e" />
 
+
+
+#Diseño dimensional
+![diseño_dimensional_LogisticaKpi](https://github.com/user-attachments/assets/03b172f1-eba9-45a8-b2cb-b3d3cba3751d)
