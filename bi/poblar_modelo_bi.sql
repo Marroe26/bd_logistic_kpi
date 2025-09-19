@@ -7,7 +7,7 @@ GO
 
 
 -- DIMENSION PRODUCTO
-INSERT INTO DimProducto (id_producto, nombre, unidad_medida, tipo, stock_minimo)
+--INSERT INTO DimProducto (id_producto, nombre, unidad_medida, tipo, stock_minimo)
 SELECT 
     p.id,
     p.nombre,
@@ -18,7 +18,7 @@ FROM productos p
 INNER JOIN unidad_medida u ON p.unidad_medida_id = u.id;
 
 -- DIMENSION EMPLEADO
-INSERT INTO DimEmpleado (id_empleado, nombres, apellidos, cargo, email, numero_registro)
+--INSERT INTO DimEmpleado (id_empleado, nombres, apellidos, cargo, email, numero_registro)
 SELECT 
     e.id,
     e.nombres,
@@ -29,7 +29,7 @@ SELECT
 FROM empleado e;
 
 -- DIMENSION PROYECTO
-INSERT INTO DimProyecto (id_proyecto, nombre_proyecto, ubicacion, estado_proyecto, fecha_inicio)
+--INSERT INTO DimProyecto (id_proyecto, nombre_proyecto, ubicacion, estado_proyecto, fecha_inicio)
 SELECT 
     pr.id,
     pr.nombre_proyecto,
@@ -39,7 +39,7 @@ SELECT
 FROM proyectos pr;
 
 -- DIMENSION TIPO MOVIMIENTO
-INSERT INTO DimTipoMovimiento (id_tipo_movimiento, nombre, descripcion)
+--INSERT INTO DimTipoMovimiento (id_tipo_movimiento, nombre, descripcion)
 SELECT 
     tm.id,
     tm.nombre,
@@ -47,7 +47,7 @@ SELECT
 FROM tipo_movimiento tm;
 
 -- DIMENSION TIPO ALERTA
-INSERT INTO DimTipoAlerta (id_tipo_alerta, nombre, descripcion)
+--INSERT INTO DimTipoAlerta (id_tipo_alerta, nombre, descripcion)
 SELECT 
     ta.id,
     ta.nombre,
@@ -55,7 +55,7 @@ SELECT
 FROM tipo_alerta ta;
 
 -- DIMENSION ESTADO ALERTA
-INSERT INTO DimEstadoAlerta (id_estado_alerta, nombre, descripcion)
+--INSERT INTO DimEstadoAlerta (id_estado_alerta, nombre, descripcion)
 SELECT 
     ea.id,
     ea.nombre,
@@ -63,14 +63,14 @@ SELECT
 FROM estado_alerta ea;
 
 -- DIMENSION TIEMPO
-INSERT INTO DimTiempo (id_tiempo, fecha, dia, mes, trimestre, anio, dia_semana)
+--INSERT INTO DimTiempo (id_tiempo, fecha, dia, mes, trimestre, anio, dia_semana)
 SELECT DISTINCT
     CONVERT(INT, FORMAT(m.fecha_movimiento, 'yyyyMMdd')) AS id_tiempo,
     m.fecha_movimiento AS fecha,
-    DAY(m.fecha_movimiento),
-    MONTH(m.fecha_movimiento),
-    DATEPART(QUARTER, m.fecha_movimiento),
-    YEAR(m.fecha_movimiento),
+    DAY(m.fecha_movimiento) AS dia,
+    MONTH(m.fecha_movimiento) AS mes,
+    DATEPART(QUARTER, m.fecha_movimiento) AS trimestre,
+    YEAR(m.fecha_movimiento) AS anio,
     DATENAME(WEEKDAY, m.fecha_movimiento)
 FROM movimiento m
 UNION
@@ -91,7 +91,7 @@ FROM alerta a;
 
 --//////////////////////////////////////////////////////////////////////////--
 
-INSERT INTO HechoMovimientos (
+--INSERT INTO HechoMovimientos (
     id_producto,
     id_empleado,
     id_proyecto,
@@ -100,6 +100,7 @@ INSERT INTO HechoMovimientos (
     cantidad,
     stock_actual
 )
+
 SELECT 
     m.productos_id,
     m.empleado_id,
@@ -113,17 +114,18 @@ INNER JOIN productos p ON m.productos_id = p.id;
 
 --//////////////////////////////////////////////////////////////////////////--
 
-INSERT INTO HechoAlertas (
+--INSERT INTO HechoAlertas (
     id_producto,
     id_tipo_alerta,
     id_estado_alerta,
     id_tiempo,
     mensaje
 )
+
 SELECT 
     a.productos_id,
-    a.id_tipo_alerta,
-    a.id_estado_alerta,
+    a.tipo_alerta_id,
+    a.estado_alerta_id,
     CONVERT(INT, FORMAT(a.fecha_alerta, 'yyyyMMdd')) AS id_tiempo,
     a.mensaje
 FROM alerta a;
